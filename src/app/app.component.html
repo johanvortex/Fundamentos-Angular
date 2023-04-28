@@ -1,11 +1,29 @@
-<h1>ngModel</h1>
-<p>Nombre {{person.name}}</p>
-<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"  />
-<p>Valid: {{nameInput.valid}}</p>
-<p>Age {{person.age}}</p>
-<input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age"  />
-<p>Valid: {{ageInput.valid}}</p>
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name" />
 
+<p *ngIf="person.name === 'Johan'">Soy Johan</p>
+<p *ngIf="person.name === 'Andres' && person.age === 18; else elseBlock">
+  Soy Andres
+</p>
+<ng-template #elseBlock>
+  <h3>La condición esta en false</h3>
+</ng-template>
+<hr />
+
+<h1>ngModel</h1>
+<p>Nombre {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+<p>Age {{ person.age }}</p>
+<input
+  type="number"
+  max="18"
+  min="10"
+  required
+  #ageInput="ngModel"
+  [(ngModel)]="person.age"
+/>
+<p>Valid: {{ ageInput.valid }}</p>
 
 <h1>Eventos</h1>
 <button [disabled]="btnDisable">Guardar</button>
@@ -17,31 +35,25 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
     voluptate voluptatibus natus dolores excepturi optio nulla temporibus
     laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
-    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
-    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
-    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
-    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
-    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
-    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
-    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
-    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
-    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
-    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
-    consequatur!
-
+    consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
+    placeat voluptate voluptatibus natus dolores excepturi optio nulla
+    temporibus laudantium assumenda odio ex explicabo dolorum velit, quas quis
+    neque itaque consequatur! Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Ut, placeat voluptate voluptatibus natus dolores excepturi optio nulla
+    temporibus laudantium assumenda odio ex explicabo dolorum velit, quas quis
+    neque itaque consequatur! Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Ut, placeat voluptate voluptatibus natus dolores excepturi optio nulla
+    temporibus laudantium assumenda odio ex explicabo dolorum velit, quas quis
+    neque itaque consequatur! Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Ut, placeat voluptate voluptatibus natus dolores excepturi optio nulla
+    temporibus laudantium assumenda odio ex explicabo dolorum velit, quas quis
+    neque itaque consequatur! Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Ut, placeat voluptate voluptatibus natus dolores excepturi optio nulla
+    temporibus laudantium assumenda odio ex explicabo dolorum velit, quas quis
+    neque itaque consequatur!
   </p>
 </div>
-<p>Nombre {{person.name}}</p>
+<p>Nombre {{ person.name }}</p>
 <input type="text" [value]="person.name" (keyup)="changeName($event)" />
 
 <hr />
