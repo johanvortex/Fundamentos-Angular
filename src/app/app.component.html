@@ -1,18 +1,60 @@
+<h1>ngModel</h1>
+<p>Nombre {{person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"  />
+<p>Valid: {{nameInput.valid}}</p>
+<p>Age {{person.age}}</p>
+<input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age"  />
+<p>Valid: {{ageInput.valid}}</p>
+
+
+<h1>Eventos</h1>
+<button [disabled]="btnDisable">Guardar</button>
+<button (click)="toggleButton()">Toggle Button</button>
+<p>Edad {{ person.age }}</p>
+<button (click)="increaseAge()">Incrementar edad</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, placeat
+    voluptate voluptatibus natus dolores excepturi optio nulla temporibus
+    laudantium assumenda odio ex explicabo dolorum velit, quas quis neque itaque
+    consequatur!
+
+  </p>
+</div>
+<p>Nombre {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
+
+<hr />
 <h1>Propiedades</h1>
 <button [disabled]="btnDisable">Enviar</button>
-<input type="text" [value]="person.name">
-<progress max ="100" [value]="person.age"></progress>
-<img width="100" [src]="person.avatar" alt="img">
+<input type="text" [value]="person.name" />
+<progress max="100" [value]="person.age"></progress>
+<img width="100" [src]="person.avatar" alt="img" />
 
-
-<hr/>
-
+<hr />
 
 <h1>Hola mundo</h1>
 <h2>{{ "Hola Mundo".repeat(5) }}</h2>
 <p>3+3 = {{ 3 + 3 }}</p>
-<h3>Hola, soy {{name}} y tengo {{age}} </h3>
-<img src={{img}} alt = "imagen">
-
-
-
+<h3>Hola, soy {{ name }} y tengo {{ age }}</h3>
+<img src="{{ img }}" alt="imagen" />
